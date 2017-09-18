@@ -1,0 +1,22 @@
+buildscript {
+	dependencies {
+        classpath group: "com.liferay", name: "com.liferay.gradle.plugins.defaults", version: "latest.release"
+        //classpath group: "com.liferay", name: "com.liferay.gradle.plugins.workspace", version: "1.5.0"
+		classpath group: "net.saliman", name: "gradle-properties-plugin", version: "1.4.6"
+	}
+
+	repositories {
+		maven {
+			url "https://cdn.lfrs.sl/repository.liferay.com/nexus/content/groups/public"
+		}
+	}
+}
+
+// This comes from Liferay Workspace
+apply plugin: "net.saliman.properties"
+
+// This comes from Workspace as well but had to be removed because of some gradle conflict
+//apply plugin: "com.liferay.workspace"
+
+// Comes from com-liferay-frontend-js
+apply plugin: "com.liferay.settings.plugin"

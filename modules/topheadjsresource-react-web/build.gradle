@@ -1,0 +1,17 @@
+task buildReact(type: Copy)
+
+buildReact {
+    from "${projectDir}/node_modules/react/dist/react.js", "${projectDir}/node_modules/react-dom/dist/react-dom.js"
+    into "${buildDir}/"
+}
+
+classes {
+    dependsOn buildReact
+}
+
+dependencies {
+	compile group: "com.liferay.portal", name: "com.liferay.portal.kernel", version: "2.0.0"
+	compile group: "javax.servlet", name: "javax.servlet-api", version: "3.0.1"
+    compile group: "org.osgi", name: "org.osgi.core", version: "5.0.0"
+	compile group: "org.osgi", name: "org.osgi.service.component.annotations", version: "1.3.0"
+}
